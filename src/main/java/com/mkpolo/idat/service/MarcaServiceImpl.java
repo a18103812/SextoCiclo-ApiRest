@@ -19,4 +19,29 @@ public class MarcaServiceImpl implements IMarcasService{
 		return (List<Marcas>) marcasRepo.findAll();
 	}
 
+	@Override
+	public void guardar(Marcas marca) {
+		marcasRepo.save(marca);
+	}
+
+	@Override
+	public Marcas buscarPorId(Long id) {
+		return marcasRepo.findById(id).orElse(null);
+	}
+
+	@Override
+	public void eliminar(Long id) {
+		marcasRepo.deleteById(id);
+	}
+
+	@Override
+	public boolean existeMarca(String marca) {
+		return marcasRepo.existsByMarca(marca);
+	}
+
+	@Override
+	public boolean existeId(Long id) {
+		return marcasRepo.existsById(id);
+	}
+
 }

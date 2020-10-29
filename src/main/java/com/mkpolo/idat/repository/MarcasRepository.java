@@ -7,5 +7,5 @@ import com.mkpolo.idat.entity.Marcas;
 
 @Repository
 public interface MarcasRepository extends CrudRepository<Marcas, Long>{
-
+	boolean existsByMarca(String marca);
 }
